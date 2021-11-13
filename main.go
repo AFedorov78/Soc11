@@ -50,10 +50,6 @@ func main() {
 		io.WriteString(w, "Contact Page")
 		log.Print("Contact Page")
 	})
-	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		io.WriteString(w, "Index Page")
-		log.Print("Index Page")
-	})
 
 	log.Print("Server is listening...")
 	log.Fatal(http.ListenAndServe(":"+port, r))
