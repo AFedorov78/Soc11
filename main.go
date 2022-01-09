@@ -31,7 +31,7 @@ func main() {
 	if port == "" {
 		log.Print("$PORT must be set")
 		// Set the USERNAME environment variable to "MattDaemon"
-		os.Setenv("PORT", "3002")
+		os.Setenv("PORT", "5002")
 		port = os.Getenv("PORT")
 	}
 	log.Print("port:" + port)
