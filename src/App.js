@@ -6,15 +6,15 @@ import axios from 'axios';
 
 
 function App(){
-  const [books, setBooks] = useState(null);
+  //const [books, setBooks] = useState(null);
 
-  const apiURL = "https://www.anapioficeandfire.com/api/books?pageSize=30";
+  //const apiURL = "https://www.anapioficeandfire.com/api/books?pageSize=30";
 
-    const fetchData = async () => {
-        const response = await axios.get(apiURL)
+   // const fetchData = async () => {
+  //      const response = await axios.get(apiURL)
 
-        setBooks(response.data) 
-    }
+   //     setBooks(response.data) 
+  //  }
 
   return (
     <div className="App">
@@ -23,7 +23,8 @@ function App(){
 
     {/_ Запрос данных из API _/}
     <div>
-      <button className="fetch-button" onClick={fetchData}>
+      <button className="fetch-button" onClick="">
+        //fetchData
         Fetch Data
       </button>
     </div>
