@@ -26,10 +26,13 @@ type Author struct {
 var books []Book
 
 func main() {
-	//port := "3001"
+	//port := "3002"
 	port := os.Getenv("PORT")
 	if port == "" {
-		log.Fatal("$PORT must be set")
+		log.Print("$PORT must be set")
+		// Set the USERNAME environment variable to "MattDaemon"
+		os.Setenv("PORT", "3002")
+		port = os.Getenv("PORT")
 	}
 	log.Print("port:" + port)
 

@@ -1,26 +1,40 @@
 import logo from './logo.svg';
-import React, { Component } from 'react';
+import React, {  useState } from 'react';
 import './App.css';
+import axios from 'axios';
 
-function App() {
+
+
+function App(){
+  const [books, setBooks] = useState(null);
+
+  const apiURL = "https://www.anapioficeandfire.com/api/books?pageSize=30";
+
+    const fetchData = async () => {
+        const response = await axios.get(apiURL)
+
+        setBooks(response.data) 
+    }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1>Game of Thrones Books</h1>
+    <h2>Fetch a list from an API and display it</h2>
+
+    {/_ Запрос данных из API _/}
+    <div>
+      <button className="fetch-button" onClick={fetchData}>
+        Fetch Data
+      </button>
     </div>
-  );
+
+    {/_ Отображение данных из API _/}
+    <div className="books">
+      // Данные из API будут тут
+          </div>
+
+  </div>
+  )
 }
 
 export default App;
